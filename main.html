@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Fpv Transportes</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="navbar-static-top.css" rel="stylesheet">
+
+
+    <style>
+      html, body, div, canvas {
+        width:  100%;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+
+</head>
+
+<body onresize="resize_canvas()">
+
+  <!-- Static navbar -->
+  <canvas id="blue_top_bar"></canvas>
+  <script>
+  draw_top();
+      function draw_top() { 
+        var canvas = document.getElementById('blue_top_bar');
+        var context = canvas.getContext('2d');
+        context.canvas.width  = window.innerWidth;
+        context.canvas.height = 136;
+        context.beginPath();
+        context.rect(0, 0, 10000, 0);
+        context.lineWidth = 52;
+        context.strokeStyle = '#008AE6';
+        context.stroke();
+
+        context.beginPath();
+        context.rect(0, 52, 10000, 0);
+        context.lineWidth = 52;
+        context.strokeStyle = '#D99800';
+        context.stroke();
+
+        context.fillText("Fpv Transportes", canvas.width/2, canvas.height/2); 
+    }
+
+        
+
+        function resize_canvas(){
+            canvas = document.getElementById("blue_top_bar");
+            if (canvas.width  != window.innerWidth)
+            {
+                draw_top();
+            }
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>
+
